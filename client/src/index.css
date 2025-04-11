@@ -16,7 +16,7 @@
   }
 
   .input-btn {
-    @apply bg-primary-dark text-light w-full py-3 my-3 rounded-md uppercase tracking-wider shadow-lg hover:bg-primary hover:scale-105 transition-all active:scale-95;
+    @apply bg-primary-dark text-light w-full py-3 my-3 rounded-md uppercase tracking-wider shadow-lg hover:bg-primary hover:scale-102 transition-transform active:scale-98 cursor-pointer;
   }
 
   .icon-btn {
