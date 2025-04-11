@@ -51,7 +51,7 @@ const AddEditCard = ({
   };
 
   return (
-    <div className='relative'>
+    <div className='relative '>
       <form
         className='flex flex-col gap-3 rounded-md'
         onSubmit={(e) => {

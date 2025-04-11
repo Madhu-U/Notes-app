@@ -54,7 +54,6 @@ const Dashboard = () => {
   // Pin/Unpin note
   const handlePin = async (data) => {
     const noteId = data._id;
-    console.log(noteId);
     try {
       const response = await pinNote(noteId, {
         isPinned: !data.isPinned,
@@ -76,7 +75,7 @@ const Dashboard = () => {
 
   return (
     <>
-      <div className='max-w-[90%] mx-auto py-5 grid sm:grid-cols-3 gap-4 relative'>
+      <div className='max-w-[90%] mx-auto py-5 grid md:grid-cols-3 gap-4 relative'>
         {allNotes.map((note) => {
           const id = note["_id"];
           return (
@@ -92,7 +91,7 @@ const Dashboard = () => {
         })}
       </div>
       <button
-        className='fixed right-10 bottom-5 uppercase tracking-wider font-medium px-2 text-xs rounded-md py-2 bg-accent text-light shadow-lg hover:scale-105 transition-all cursor-pointer active:scale-95'
+        className='fixed right-[40%] sm:right-10 bottom-5 uppercase tracking-wider font-medium px-2 text-xs rounded-md py-2 bg-accent text-light shadow-lg hover:scale-105 transition-all cursor-pointer active:scale-95'
         onClick={() => {
           setOpenAddEditModal({ isShown: true, type: "add", data: null });
         }}
@@ -110,7 +109,7 @@ const Dashboard = () => {
           },
         }}
         contentLabel=''
-        className='w-[50%] bg-light p-5 mx-auto rounded-md mt-[5rem] shadow-xl'
+        className='w-[50%] min-w-[350px] bg-light p-5 mx-auto rounded-md mt-[5rem] shadow-xl'
       >
         <AddEditCard
           openAddEditModal={openAddEditModal}

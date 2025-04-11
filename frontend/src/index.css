@@ -20,12 +20,16 @@
   }
 
   .icon-btn {
-    @apply w-7 text-slate-500 hover:text-primary-dark cursor-pointer hover:scale-110 active:scale-95 transition-all;
+    @apply w-6 h-6 text-slate-500 hover:text-primary-dark cursor-pointer hover:scale-115  active:scale-95 transition-all;
   }
 
   .input-label {
     @apply text-slate-500 text-sm;
   }
+}
+
+nav > h2 {
+  font-family: "Eagle Lake", serif;
 }
 
 @theme {
