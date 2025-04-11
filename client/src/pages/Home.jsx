@@ -1,8 +1,10 @@
 import React from "react";
 import { FiBook, FiEdit, FiTag } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import { useUser } from "../context/UserContext";
 
 const Home = () => {
+  const { isLoggedIn } = useUser();
   return (
     <main>
       <section className='py-20 px-8 max-w-4xl mx-auto text-center'>
@@ -14,7 +16,10 @@ const Home = () => {
           anywhere.
         </p>
         <div className='my-12'>
-          <Link to='/signup' className='input-btn px-6 '>
+          <Link
+            to={`${isLoggedIn ? "/dashboard" : "/signup"}`}
+            className='input-btn px-6 '
+          >
             Get Started - It's Free
           </Link>
         </div>
