@@ -5,7 +5,7 @@ import Modal from "react-modal";
 import { useUser } from "../context/UserContext";
 import { useNavigate } from "react-router-dom";
 import { getUser } from "../api/auth";
-import { deleteNote, getAllNotes } from "../api/notes";
+import { deleteNote, pinNote } from "../api/notes";
 import { toast } from "react-toastify";
 
 const Dashboard = () => {
@@ -14,8 +14,6 @@ const Dashboard = () => {
     type: "add",
     data: null,
   });
-  // const [allNotes, setAllNotes] = useState([]);
-  // const [isSearch, setIsSearch] = useState(false);
   const { setUserInfo, allNotes, fetchAllNotes } = useUser();
   const navigate = useNavigate();
 
@@ -53,6 +51,23 @@ const Dashboard = () => {
     }
   };
 
+  // Pin/Unpin note
+  const handlePin = async (data) => {
+    const noteId = data._id;
+    console.log(noteId);
+    try {
+      const response = await pinNote(noteId, {
+        isPinned: !data.isPinned,
+      });
+      if (response.data && response.data.note) {
+        toast.success("Note updated");
+        fetchAllNotes();
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
     fetchAllNotes();
     getUserInfo();
@@ -71,6 +86,7 @@ const Dashboard = () => {
               handleDelete={handleNoteDelete}
               setOpenAddEditModal={setOpenAddEditModal}
               fetchAllNotes={fetchAllNotes}
+              handlePin={handlePin}
             ></NoteCard>
           );
         })}

@@ -241,7 +241,8 @@ app.put("/update-note-pinned/:noteId", authenticateToken, async (req, res) => {
   const { isPinned } = req.body;
   const noteId = req.params.noteId;
 
-  if (!isPinned) return res.status(400).json({ message: "No Changes made" });
+  if (typeof isPinned !== "boolean")
+    return res.status(400).json({ message: "Invalid isPinned value" });
 
   try {
     const note = await Note.findOne({ _id: noteId, userId: user._id });

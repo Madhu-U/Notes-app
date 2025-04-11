@@ -8,6 +8,7 @@ const NoteCard = ({
   handleDelete,
   setOpenAddEditModal,
   fetchAllNotes,
+  handlePin,
 }) => {
   const { title, content, createdAt, isPinned, tags } = note;
 
@@ -38,9 +39,15 @@ const NoteCard = ({
           className='icon-btn'
         ></MdOutlineEdit>
         {isPinned ? (
-          <TbPinnedFilled className='absolute right-4 top-4 icon-btn'></TbPinnedFilled>
+          <TbPinnedFilled
+            onClick={() => handlePin(note)}
+            className='absolute right-4 top-4 icon-btn'
+          ></TbPinnedFilled>
         ) : (
-          <TbPinned className='absolute right-4 top-4 icon-btn'></TbPinned>
+          <TbPinned
+            onClick={() => handlePin(note)}
+            className='absolute right-4 top-4 icon-btn'
+          ></TbPinned>
         )}
 
         <MdDeleteOutline
