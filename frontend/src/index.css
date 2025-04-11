@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    font-family: "Poppins", sans-serif;
+  }
+
+  body {
+    background-color: #eeeeee;
+  }
+}
+
+@layer components {
+  .input-box {
+    @apply border p-3 my-3 text-sm border-slate-400 rounded w-full focus:outline-none focus:ring-2 focus:ring-primary-dark;
+  }
+
+  .input-btn {
+    @apply bg-primary-dark text-light w-full py-3 my-3 rounded-md uppercase tracking-wider shadow-lg hover:bg-primary hover:scale-105 transition-all active:scale-95;
+  }
+
+  .icon-btn {
+    @apply w-7 text-slate-500 hover:text-primary-dark cursor-pointer hover:scale-110 active:scale-95 transition-all;
+  }
+
+  .input-label {
+    @apply text-slate-500 text-sm;
+  }
+}
+
+@theme {
+  --color-primary-dark: #222831;
+  --color-primary: #393e46;
+  --color-accent: #00adb5;
+  --color-light: #eeeeee;
+}
+
+.Toastify__toast {
+  border-radius: 8px;
+  font-family: "Poppins" sans-serif;
+  padding: 12px 16px;
+}
+
+.Toastify__toast--success {
+  background: #eeeeee;
+  color: #222831;
+}
+
+.Toastify__toast--error {
+  background: #eeeeee;
+  color: #ff6b6b;
+}
