@@ -16,6 +16,9 @@ pids
 *.pid.lock
 
 # dotenv environment files
+client/.env
+server/.env
+
 *.env
 *.env.local
 *.env.development.local
