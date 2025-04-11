@@ -59,7 +59,7 @@ const Nav = () => {
     <nav className='flex flex-col sm:flex-row gap-5 items-center justify-center sm:justify-between px-6 py-6 shadow-md'>
       <h2
         onClick={() => (!isLoggedIn ? navigate("/") : navigate("/dashboard"))}
-        className='cursor-pointer text-2xl font-bold  '
+        className='cursor-pointer text-2xl sm:text-4xl font-bold  '
       >
         Slate
       </h2>
