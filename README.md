@@ -4,6 +4,8 @@ Slate is a clean, intuitive note-taking application built using the MERN stack (
 
 ![Slate App Screenshot](/home-screenshot.png)
 
+Live Site : [Click Here](https://slate-notes-app.vercel.app/)
+
 ## Features
 
 - **User Authentication**: Secure signup and login functionality with JWT
